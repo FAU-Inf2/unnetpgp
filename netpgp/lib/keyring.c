@@ -1049,6 +1049,7 @@ __ops_keyring_json(__ops_io_t *io, const __ops_keyring_t *keyring, mj_t *obj, co
 
 
 /* this interface isn't right - hook into callback for getting passphrase */
+
 char *
 __ops_export_key(__ops_io_t *io, const __ops_key_t *keydata, uint8_t *passphrase)
 {
