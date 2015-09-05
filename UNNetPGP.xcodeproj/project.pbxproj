@@ -39,6 +39,10 @@
 		75E60C3E17F4586C00952522 /* netpgp.h in Headers */ = {isa = PBXBuildFile; fileRef = 75E60C3A17F44E6200952522 /* netpgp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75EC4E1E180014BC00D82718 /* fmemopen.c in Sources */ = {isa = PBXBuildFile; fileRef = 75EC4E1B180014BC00D82718 /* fmemopen.c */; };
 		75EC4E1F180014BC00D82718 /* fmemopen.h in Headers */ = {isa = PBXBuildFile; fileRef = 75EC4E1C180014BC00D82718 /* fmemopen.h */; };
+		AD671D211B9B1BF200EF39D9 /* PGPKeyID.h in Headers */ = {isa = PBXBuildFile; fileRef = AD671D1D1B9B1BF200EF39D9 /* PGPKeyID.h */; };
+		AD671D221B9B1BF200EF39D9 /* PGPKeyID.m in Sources */ = {isa = PBXBuildFile; fileRef = AD671D1E1B9B1BF200EF39D9 /* PGPKeyID.m */; };
+		AD671D231B9B1BF200EF39D9 /* PGPKey.h in Headers */ = {isa = PBXBuildFile; fileRef = AD671D1F1B9B1BF200EF39D9 /* PGPKey.h */; };
+		AD671D241B9B1BF200EF39D9 /* PGPKey.m in Sources */ = {isa = PBXBuildFile; fileRef = AD671D201B9B1BF200EF39D9 /* PGPKey.m */; };
 		D035A006DF60432984EB4D07 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE89B52DBAE9412383F2624D /* libPods.a */; };
 		D127CB14182E9D8100BB0AF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E60B6B17F4498900952522 /* XCTest.framework */; };
 		D127CB15182E9D8100BB0AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E60B5D17F4498900952522 /* Foundation.framework */; };
@@ -135,6 +139,10 @@
 		75EC4E1B180014BC00D82718 /* fmemopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fmemopen.c; sourceTree = "<group>"; };
 		75EC4E1C180014BC00D82718 /* fmemopen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmemopen.h; sourceTree = "<group>"; };
 		85DB375B63DF47EE94EF26FC /* Pods-UNNetPGP Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNNetPGP Tests.xcconfig"; path = "Pods/Pods-UNNetPGP Tests.xcconfig"; sourceTree = "<group>"; };
+		AD671D1D1B9B1BF200EF39D9 /* PGPKeyID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGPKeyID.h; sourceTree = "<group>"; };
+		AD671D1E1B9B1BF200EF39D9 /* PGPKeyID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPKeyID.m; sourceTree = "<group>"; };
+		AD671D1F1B9B1BF200EF39D9 /* PGPKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGPKey.h; sourceTree = "<group>"; };
+		AD671D201B9B1BF200EF39D9 /* PGPKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPKey.m; sourceTree = "<group>"; };
 		D127CB13182E9D8000BB0AF0 /* UNNetPGP Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UNNetPGP Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D127CB19182E9D8100BB0AF0 /* UNNetPGP Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UNNetPGP Tests-Info.plist"; sourceTree = "<group>"; };
 		D127CB1B182E9D8100BB0AF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -246,6 +254,10 @@
 				75E60B6017F4498900952522 /* Supporting Files */,
 				7544904817FB07880047DF5C /* UNNetPGP.h */,
 				7544904917FB07880047DF5C /* UNNetPGP.m */,
+				AD671D1D1B9B1BF200EF39D9 /* PGPKeyID.h */,
+				AD671D1E1B9B1BF200EF39D9 /* PGPKeyID.m */,
+				AD671D1F1B9B1BF200EF39D9 /* PGPKey.h */,
+				AD671D201B9B1BF200EF39D9 /* PGPKey.m */,
 			);
 			path = netpgp;
 			sourceTree = "<group>";
@@ -346,7 +358,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD671D231B9B1BF200EF39D9 /* PGPKey.h in Headers */,
 				75EC4E1F180014BC00D82718 /* fmemopen.h in Headers */,
+				AD671D211B9B1BF200EF39D9 /* PGPKeyID.h in Headers */,
 				75E60C3E17F4586C00952522 /* netpgp.h in Headers */,
 				7544904A17FB07880047DF5C /* UNNetPGP.h in Headers */,
 			);
@@ -475,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD671D241B9B1BF200EF39D9 /* PGPKey.m in Sources */,
 				75E60C2C17F44A0B00952522 /* packet-show.c in Sources */,
 				75E60C2717F44A0B00952522 /* misc.c in Sources */,
 				75E60C2917F44A0B00952522 /* openssl_crypto.c in Sources */,
@@ -491,6 +506,7 @@
 				75E60C2417F44A0B00952522 /* crypto.c in Sources */,
 				75E60C3517F44BAE00952522 /* mj.c in Sources */,
 				75E60C2A17F44A0B00952522 /* packet-parse.c in Sources */,
+				AD671D221B9B1BF200EF39D9 /* PGPKeyID.m in Sources */,
 				75E60C2317F44A0B00952522 /* create.c in Sources */,
 				75E60C2817F44A0B00952522 /* netpgp.c in Sources */,
 				75E60C3117F44A0B00952522 /* validate.c in Sources */,
