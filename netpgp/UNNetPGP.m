@@ -535,6 +535,94 @@ static dispatch_queue_t lock_queue;
     return [self generateKey:numberOfBits named:keyName toDirectory:path saveToDefaultKeyring:NO];
 }
 
+#pragma mark - SMILE implementation
+
+- (PGPKey *) getPGPKeyFromData:(NSData *)keyData
+{
+	//TODO
+	return nil;
+}
+
+- (BOOL) importKeyFromData:(NSData *)keyData
+{
+	//TODO
+	return false;
+}
+
+- (NSData *) exportKeyByLongKeyString:(NSString *)longKeyString
+							  KeyType:(PGPKeyType *)keyType
+{
+	//TODO
+	return nil;
+}
+
+- (PGPKey *) getKeyForKeyID:(PGPKeyID *)keyID
+					   Type:(PGPKeyType)keyType
+{
+	//TODO
+	return nil;
+}
+
+- (NSURL *) exportKeysOfType:(PGPKeyType *)keyType
+					 Armored:(BOOL)armored
+					   Error:(NSError * __autoreleasing *)error
+{
+	//TODO
+	return nil;
+}
+
+- (NSMutableArray *) getKeysOfType:(PGPKeyType *)keyType
+{
+	//TODO
+	return nil;
+}
+
+- (NSData *) encryptData:(NSData *)dataToEncrypt
+		 usingPublicKeys:(NSArray *)publicKeys
+				 armored:(BOOL)armored
+				   error:(NSError * __autoreleasing *)error
+{
+	//TODO
+	return nil;
+}
+
+- (NSData *) decryptData:(NSData *)messageDataToDecrypt
+				 withKey:(PGPKey *)key
+			  passphrase:(NSString *)passphrase
+				   error:(NSError * __autoreleasing *)error
+{
+	//TODO
+	return nil;
+}
+
+- (BOOL) verifyData:(NSData *)signedData
+	  withSignature:(NSData *)signatureData
+		   usingKey:(PGPKey *)publicKey
+			  error:(NSError * __autoreleasing *)error
+{
+	//TODO
+	return nil;
+}
+
+- (NSData *) signData:(NSData *)dataToSign
+	   usingSecretKey:(PGPKey *)secretKey
+		   passphrase:(NSString *)passphrase
+				error:(NSError * __autoreleasing *)error
+{
+	//TODO
+	return nil;
+}
+
+- (NSData *) generateKey:(int)numberOfBits
+		   primaryUserID:(NSString *)primaryUserID
+			  passphraes:(NSString *)passphrase
+		  expirationDate:(NSDate *)expirationDate
+				   error:(NSError * __autoreleasing *)error
+{
+	//TODO
+	return nil;
+}
+
 #pragma mark - private
 
 - (netpgp_t *) buildnetpgp;

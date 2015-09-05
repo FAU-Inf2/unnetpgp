@@ -20,6 +20,8 @@
 
 
 #import <Foundation/Foundation.h>
+#import "PGPKey.h"
+#import "PGPKeyID.h"
 
 typedef NS_OPTIONS(NSUInteger, UNEncryptOption)
 {
@@ -100,5 +102,65 @@ typedef NS_OPTIONS(NSUInteger, UNEncryptOption)
 - (BOOL) generateKey:(int)numberOfBits;
 /** Generate pair of keys and store in specified by path */
 - (BOOL) generateKey:(int)numberOfBits named:(NSString *)keyName toDirectory:(NSString *)path;
+
+//MARK: - METHODS BY SMILE TEAM
+
+// secret and public
+- (PGPKey *) getPGPKeyFromData:(NSData *)keyData;
+- (BOOL) importKeyFromData:(NSData *)keyData;
+- (NSData *) exportKeyByLongKeyString:(NSString *)longKeyString
+							  KeyType:(PGPKeyType *)keyType;
+
+- (PGPKey *) getKeyForKeyID:(PGPKeyID *)keyID
+					   Type:(PGPKeyType)keyType;
+
+/**
+ * Export PGPKeys to file
+ *
+ * @param keyType: PGPKeyType
+ * @param armored: true for armored .asc file
+ * @param error: the error if any
+ *
+ * @return The URL to the created file or nil
+ */
+- (NSURL *) exportKeysOfType:(PGPKeyType *)keyType
+					 Armored:(BOOL)armored
+					   Error:(NSError * __autoreleasing *)error;
+
+/**
+ * Get PGPKeys of given PGPKeyType
+ *
+ * @param keyType: PGPKeyType
+ *
+ * @return Array of PGPKey or nil
+ */
+- (NSMutableArray *) getKeysOfType:(PGPKeyType *)keyType;
+
+- (NSData *) encryptData:(NSData *)dataToEncrypt
+		 usingPublicKeys:(NSArray *)publicKeys
+				 armored:(BOOL)armored
+				   error:(NSError * __autoreleasing *)error;
+
+- (NSData *) decryptData:(NSData *)messageDataToDecrypt
+				 withKey:(PGPKey *)key
+			  passphrase:(NSString *)passphrase
+				   error:(NSError * __autoreleasing *)error;
+
+- (BOOL) verifyData:(NSData *)signedData
+	  withSignature:(NSData *)signatureData
+		   usingKey:(PGPKey *)publicKey
+			  error:(NSError * __autoreleasing *)error;
+
+- (NSData *) signData:(NSData *)dataToSign
+	   usingSecretKey:(PGPKey *)secretKey
+		   passphrase:(NSString *)passphrase
+				error:(NSError * __autoreleasing *)error;
+
+- (NSData *) generateKey:(int)numberOfBits
+		   primaryUserID:(NSString *)primaryUserID
+			  passphraes:(NSString *)passphrase
+		  expirationDate:(NSDate *)expirationDate
+				   error:(NSError * __autoreleasing *)error;
+
 
 @end
