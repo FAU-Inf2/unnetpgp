@@ -546,6 +546,8 @@ static dispatch_queue_t lock_queue;
 - (PGPKey *) importKeyFromData:(NSData *)keyData
 {
 	//TODO
+	// if public {}
+	// if secret {}
 	return nil;
 }
 

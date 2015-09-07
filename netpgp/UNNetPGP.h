@@ -94,7 +94,7 @@ typedef NS_OPTIONS(NSUInteger, UNEncryptOption)
  *
  *  @return YES for success.
  */
-- (BOOL) importPublicKeyFromFileAtPath:(NSString *)inFilePath;
+- (BOOL) importPublicKeyFromFileAtPath:(NSString *)inFilePath __attribute__ ((deprecated));
 //- (BOOL) importSecureKeyFromFileAtPath:(NSString *)inFilePath;
 - (NSString *)exportKeyNamed:(NSString *)keyName;
 
