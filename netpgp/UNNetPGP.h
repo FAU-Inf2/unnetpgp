@@ -106,8 +106,16 @@ typedef NS_OPTIONS(NSUInteger, UNEncryptOption)
 //MARK: - METHODS BY SMILE TEAM
 
 // secret and public
-- (PGPKey *) getPGPKeyFromData:(NSData *)keyData;
-- (BOOL) importKeyFromData:(NSData *)keyData;
+//- (PGPKey *) getPGPKeyFromData:(NSData *)keyData;
+/**
+ * Import Key from PGP Key Block
+ *
+ * @param keyData: The PGP Key Block data
+ *
+ * @return The imported Key as PGPKey or nil if error
+ *
+ */
+- (PGPKey *) importKeyFromData:(NSData *)keyData;
 - (NSData *) exportKeyByLongKeyString:(NSString *)longKeyString
 							  KeyType:(PGPKeyType *)keyType;
 

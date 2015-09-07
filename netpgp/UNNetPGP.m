@@ -536,17 +536,17 @@ static dispatch_queue_t lock_queue;
 }
 
 #pragma mark - SMILE implementation
-
+/*
 - (PGPKey *) getPGPKeyFromData:(NSData *)keyData
 {
 	//TODO
 	return nil;
 }
-
-- (BOOL) importKeyFromData:(NSData *)keyData
+*/
+- (PGPKey *) importKeyFromData:(NSData *)keyData
 {
 	//TODO
-	return false;
+	return nil;
 }
 
 - (NSData *) exportKeyByLongKeyString:(NSString *)longKeyString
