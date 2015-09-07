@@ -116,9 +116,26 @@ typedef NS_OPTIONS(NSUInteger, UNEncryptOption)
  *
  */
 - (PGPKey *) importKeyFromData:(NSData *)keyData;
+
+/**
+ * Export Key to armored Key Data (PGP Key Block) identified by LongKeyString
+ *
+ * @param longKeyString: The PGPKeyID longKeyString
+ * @param keyType: The PGPKeyType
+ *
+ * @return Key Data as PGP Key Block
+ */
 - (NSData *) exportKeyByLongKeyString:(NSString *)longKeyString
 							  KeyType:(PGPKeyType *)keyType;
 
+/**
+ * Get PGPKey from netpgg instance by PGPKeyID
+ *
+ * @param keyID: The PGPKeyID
+ * @param keyType: The PGPKeyType
+ *
+ * @return A PGPKey representation of the netpgp key
+ */
 - (PGPKey *) getKeyForKeyID:(PGPKeyID *)keyID
 					   Type:(PGPKeyType)keyType;
 
