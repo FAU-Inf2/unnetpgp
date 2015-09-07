@@ -1054,6 +1054,27 @@ netpgp_get_key(netpgp_t *netpgp, const char *name, const char *fmt)
 
 /* export a given key */
 char *
+netpgp_export_private_key(netpgp_t *netpgp, char *name) {
+    const __ops_key_t *key;
+    __ops_io_t *io;
+    io=netpgp->io;
+    if((key = resolve_userid(netpgp, netpgp->secring, name)) == NULL) {
+        return NULL;
+    }
+    char pass[MAX_PASSPHRASE_LENGTH];
+    __ops_forget(pass, (unsigned)sizeof(pass));
+    if(netpgp->passfp) {
+        __ops_getpassphrase(netpgp->passfp, pass, sizeof(pass));
+    }
+    key = __ops_get_seckey(key);
+    
+    char *result = __ops_export_key(io, key, (strlen(pass) > 0) ? (uint8_t *)pass : NULL);
+
+    __ops_forget(pass, (unsigned)sizeof(pass));
+
+    return result;
+}
+char *
 netpgp_export_key(netpgp_t *netpgp, char *name)
 {
 	const __ops_key_t	*key;
