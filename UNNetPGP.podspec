@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
   s.libraries = 'bz2', 'z'
   
   s.source_files = 'netpgp/lib/*.{h,c}', 'netpgp/*.{h,m}', 'netpgp/fmemopen/*.{h,c}'
-  s.public_header_files = 'netpgp/lib/netpgp.h', 'netpgp/UNNetPGP.h'
+  s.public_header_files = 'netpgp/lib/netpgp.h', 'netpgp/*.h'
 end
