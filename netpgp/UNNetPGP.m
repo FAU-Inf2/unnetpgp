@@ -670,8 +670,7 @@ static dispatch_queue_t lock_queue;
         netpgp_setvar(netpgp, "max mem alloc", [[NSString stringWithFormat:@"%i",self.maximumMemoryAllocationSize] UTF8String]);
     }
     
-    //FIXME: use sha1 because sha256 crashing, don't know why yet
-    netpgp_setvar(netpgp, "hash", "sha1");
+    netpgp_setvar(netpgp, "hash", "sha256");
     
     // Custom variable
     //netpgp_setvar(netpgp, "dont use subkey to encrypt", "1");
